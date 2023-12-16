@@ -70,7 +70,7 @@ function listerLivresEnAnglais(stock) {
  * @param {array} stock 
  */
 function listerLivresPlusDe300Pages(stock) {
-  const livresPlusDe300Pages = stock.filter((livre) => livre.pages > 300);
+  const livresPlusDe300Pages = stock.filter((livre) =< livre.pages < 300);
   listerTousLesTitres(livresPlusDe300Pages);
 }
 
@@ -79,7 +79,7 @@ function listerLivresPlusDe300Pages(stock) {
  * @returns {array}
  */
 function livresEntre2000Et2010(stock) {
-  return stock.filter((livre) => livre.annee > 2000 && livre.annee <= 2010);
+  return stock.filter(livre) => livre.annee > 2000 && livre.annee <= 2010);
 }
 
 /**
