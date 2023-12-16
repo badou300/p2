@@ -1,4 +1,3 @@
-// Notre bibliothèque entière
 const livres = require('./library.json');
 
 /**
@@ -10,9 +9,9 @@ function nbLivres(stock) {
 }
 
 /**
- * @param {array} stock
+ * @param {array} stock 
  */
-function  listAllTitles(stock) {
+function listerTousLesTitres(stock) {
   stock.forEach((livre) => {
     console.log(livre.title);
   });
@@ -20,16 +19,17 @@ function  listAllTitles(stock) {
 
 /**
  * @param {array} stock 
- * @param {string} titre 
- * @param {string} auteur
- * @param {string} genre 
+ * @param {string} titre
+ * @param {string} auteur 
+ * @param {string} genre
  * @param {number} pages 
- * @param {string} langue 
+ * @param {string} langue
  * @param {number} annee 
- * @returns {array}
+ * @returns {array} 
  */
 function ajouterLivre(stock, titre, auteur, genre, pages, langue, annee) {
   const nouveauLivre = {
+    stock,
     auteur,
     titre,
     pages,
@@ -42,8 +42,8 @@ function ajouterLivre(stock, titre, auteur, genre, pages, langue, annee) {
 }
 
 /**
- * @param {array} stock
- * @param {number} index 
+ * @param {array} stock 
+ * @param {number} index
  */
 function supprimerLivre(stock, index) {
   stock.splice(index, 1);
@@ -51,7 +51,7 @@ function supprimerLivre(stock, index) {
 
 /**
  * @param {array} stock
- * @param {number} index
+ * @param {number} index 
  * @param {string} nouveauTitre 
  */
 function mettreAJourTitre(stock, index, nouveauTitre) {
@@ -70,16 +70,16 @@ function listerLivresEnAnglais(stock) {
  * @param {array} stock 
  */
 function listerLivresPlusDe300Pages(stock) {
-  const livresPlusDe300Pages = stock.filter((livre) =< livre.pages < 300);
+  const livresPlusDe300Pages = stock.filter((livre) => livre.pages > 300);
   listerTousLesTitres(livresPlusDe300Pages);
 }
 
 /**
- * @param {array} stock
- * @returns {array}
+ * @param {array} stock 
+ * @returns {array} 
  */
 function livresEntre2000Et2010(stock) {
-  return stock.filter(livre) => livre.annee > 2000 && livre.annee <= 2010);
+  return stock.filter((livre) => livre.annee > 2000 && livre.annee <= 2010);
 }
 
 /**
@@ -91,10 +91,9 @@ function livresFantasyEnAnglais(stock) {
 }
 
 /**
- * @param {array} stock
+ * @param {array} stock 
  * @returns {object}
  */
 function livreContenantRide(stock) {
   return stock.find((livre) => livre.titre.toLowerCase().includes('ride'));
 }
-
