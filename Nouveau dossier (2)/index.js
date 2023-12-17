@@ -97,3 +97,37 @@ function livresFantasyEnAnglais(stock) {
 function livreContenantRide(stock) {
   return stock.find((livre) => livre.titre.toLowerCase().includes('ride'));
 }
+
+const stock = livres.slice();
+
+console.log('Nombre de livres:', nbLivres(stock));
+
+console.log('\nListe de tous les titres:');
+listerTousLesTitres(stock);
+
+console.log('\nAjouter un nouveau livre:');
+const stockMaj = ajouterLivre(stock, ' jeux ride', 'badou', 'Genre', 300, 'English', 2002);
+console.log('Stock mis à jour:', stockMaj);
+
+console.log('\nSupprimer un livre à l\'index 1:');
+supprimerLivre(stockMaj, 1);
+console.log('Stock mis à jour après suppression:', stockMaj);
+
+console.log('\nMettre à jour le titre du livre à l\'index 0:');
+mettreAJourTitre(stockMaj, 0, 'Titre mis à jour');
+console.log('Stock mis à jour après mise à jour du titre:', stockMaj);
+
+console.log('\nListe des livres en anglais:');
+listerLivresEnAnglais(stockMaj);
+
+console.log('\nListe des livres avec plus de 300 pages:');
+listerLivresPlusDe300Pages(stockMaj);
+
+console.log('\nLivres publiés entre 2000 et 2010:');
+console.log(livresEntre2000Et2010(stockMaj));
+
+console.log('\nLivres Fantasy en anglais:');
+console.log(livresFantasyEnAnglais(stockMaj));
+
+console.log('\nLivre contenant "ride" dans le titre:');
+console.log(livreContenantRide(stockMaj));
